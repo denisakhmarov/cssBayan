@@ -10,8 +10,9 @@ body {
     border-radius: 5px;
    /* border-width: 10px;
     max-width: 100px;*/
-    margin: 10px;
-    transition: .5s;
+    margin: 10px auto;
+    transition: 0.5s;
+    max-width: 500px;
 }
 
 /*див заголовка*/
@@ -25,7 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     /*align-items: left;*/
-    margin: 0 auto;
+    margin: 5px auto 0;
     color: rgb(7, 5, 73);
    /* max-width: 960px;*/
     width: 100%;
@@ -39,14 +40,13 @@ body {
     border-radius: 5px;
     max-width: 100px;*/
     margin: 10px;
-    transition: .3s;
+    transition: 0.3s;
+    
   }
   
   /*элемент аккордеона*/
   .accordion-item {
-   /* cursor: pointer;*/
-    /*background-color: rgb(76, 159, 223);*/
-   /* display: flex;*/
+    cursor: pointer;
     flex-direction: column;
     overflow: hidden;
     border-top: 1px solid rgb(84, 81, 81);
@@ -87,9 +87,11 @@ body {
   .accordion-item-image {
     display: flex;
     margin: 0 auto;
+        /*max-width: 0;
+        max-height: 0;*/
+        overflow: hidden;
     height: 0;
-    transition: 0.1s
-  }
+    }
 
   .accordion-header:hover {
     background-color: #eee;
@@ -102,14 +104,14 @@ body {
   /*поворачиваем иконку радиокнопки при выборе*/
   .accordion-item-input:checked ~.accordion-item-header >.radio-icon {
     transform: rotate(45deg);
-    transition: 0.1s;
+    transition: 0.2s;
     }
 
     /*меняем цвет при выборе*/
     .accordion-item-input:checked ~.accordion-item-header {
     color: black;
     font-weight: bold;
-    transition: 0.1s;
+    transition: 0.2s;
     }
   
     /*открываем картинку при выборе*/
@@ -117,30 +119,52 @@ body {
     height: 200px;
     width: 200px;
     margin: 0 auto;
-    transition: 0.1s;
+    transition: 0.2s;
     }
   
     .accordion-item-input:active ~ .accordion-item-header {
         color: black;
-        transition: 0.1s;
+        transition: 0.2s;
     }
  
-  /*
-  @media only screen and (min-width: 576px) {
-    .accordion {
-      width: 540px;
-    }
-  }
   
-  @media only screen and (min-width: 768px) {
+  @media (max-width: 320px) {
     .accordion {
-      width: 720px;
-    }
+      max-width: 200px;
+        }
+    .header-title-text {
+        font-size: 18px;
+        }
+    .accordion-item-header {
+        font-size: 18px;
+        }
+    .radio-icon {
+        font-size: 20px;
+        }
+    .accordion-item {
+        margin: 3px auto;
+        
+        }
   }
-  
-  @media only screen and (min-width: 992px) {
-    .accordion {
-      width: 960px;
+   
+  @media (max-width: 820px) {
+     .accordion {
+      max-width: 600px;
     }
-  }
-  */
+
+   @media (hover :hover) {
+        .accordion-item-input:hover ~.accordion-item-header {
+            color: rgb(41, 41, 41);
+            transition: 0.2s;
+        }
+        input:hover ~.accordion-item-header >.radio-icon {
+            transform: rotate(45deg);
+        }
+        .accordion-item-input:hover ~.accordion-item-image {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            transition: 0.2s;
+        }
+    }
+}
