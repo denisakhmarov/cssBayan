@@ -134,20 +134,20 @@ label {
     .accordion {
         max-width: 600px;
     }
+}
 
 @media (hover :hover) {
     .accordion-item-input:hover ~.accordion-item-header {
-            color: rgb(41, 41, 41);
-            transition: 0.2s;
-        }
+        color: rgb(41, 41, 41);
+        transition: 0.2s;
+    }
     input:hover ~.accordion-item-header >.radio-icon {
-            transform: rotate(45deg);
-        }
+        transform: rotate(45deg);
+    }
     .accordion-item-input:hover ~.accordion-item-image {
-            height: 200px;
-            width: 200px;
-            margin: 0 auto;
-            transition: 0.2s;
-        }
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        transition: 0.2s;
     }
 }
